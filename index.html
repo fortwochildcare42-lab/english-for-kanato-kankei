@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>関係副詞マスター | where・when・why・how と which の使い分け</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Source+Serif+4:ital,wght@0,500;0,700;1,500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f5f3ec;
+    --paper-2: #efece2;
+    --card: #fffdf7;
+    --ink: #232a24;
+    --ink-soft: #5b6459;
+    --line: #d9d4c3;
+    --pine: #3f5b45;
+    --pine-deep: #2b4130;
+    --pine-pale: #e4ead9;
+    --clay: #b8442f;
+    --clay-pale: #f4e0da;
+    --gold: #b3872f;
+    --gold-pale: #f2e8d2;
+    --ink-blue: #2b4a63;
+    --blue-pale: #e2ebef;
+    --radius: 3px;
+    --shadow: 0 1px 0 rgba(35,42,36,0.06);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--pine-pale);}
+
+  .jp-serif{font-family:'Shippori Mincho', serif;}
+  .en{font-family:'Source Serif 4', serif; font-style:normal;}
+  .tag{font-family:'JetBrains Mono', monospace;}
+
+  a{color:inherit;}
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns: 250px 1fr;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  @media (max-width:880px){
+    .shell{grid-template-columns:1fr;}
+  }
+
+  /* ---------- sidebar nav ---------- */
+  nav.side{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    overflow-y:auto;
+    padding:34px 22px 34px 28px;
+    border-right:1px solid var(--line);
+  }
+  @media (max-width:880px){
+    nav.side{
+      position:static;
+      height:auto;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:20px 24px;
+    }
+  }
+  .side-brand{
+    font-family:'Shippori Mincho', serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--pine-deep);
+    letter-spacing:.04em;
+    margin-bottom:2px;
+  }
+  .side-brand small{
+    display:block;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin-top:6px;
+    letter-spacing:.02em;
+  }
+  .side-list{
+    list-style:none;
+    margin:28px 0 0;
+    padding:0;
+    font-size:13.5px;
+  }
+  .side-list li{margin-bottom:3px;}
+  .side-list a{
+    display:block;
+    padding:8px 10px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-left:2px solid transparent;
+  }
+  .side-list a:hover{
+    background:var(--pine-pale);
+    color:var(--pine-deep);
+  }
+  .side-list .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    color:var(--gold);
+    margin-right:7px;
+  }
+  .side-score{
+    margin-top:30px;
+    padding:14px 14px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .side-score b{color:var(--pine-deep); font-size:15px; font-family:'JetBrains Mono',monospace;}
+
+  /* ---------- main ---------- */
+  main{padding:48px 56px 120px;}
+  @media (max-width:880px){main{padding:32px 22px 90px;}}
+
+  header.hero{
+    padding-bottom:38px;
+    margin-bottom:46px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--pine);
+    margin:0 0 14px;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,42px);
+    line-height:1.4;
+    margin:0 0 18px;
+    color:var(--pine-deep);
+  }
+  .hero p{
+    max-width:640px;
+    color:var(--ink-soft);
+    font-size:15px;
+    margin:0;
+  }
+
+  section{margin-bottom:74px; scroll-margin-top:20px;}
+  section h2{
+    font-family:'Shippori Mincho', serif;
+    font-size:24px;
+    color:var(--pine-deep);
+    margin:0 0 8px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  section h2 .lesson-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:#fff;
+    background:var(--pine);
+    padding:3px 8px;
+    border-radius:20px;
+    vertical-align:middle;
+  }
+  .section-lead{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    max-width:680px;
+    margin:0 0 28px;
+  }
+
+  /* ---------- example sentence card ---------- */
+  .ex{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 22px;
+    font-family:'Source Serif 4', serif;
+    font-size:16px;
+    box-shadow:var(--shadow);
+  }
+  .ex .jp{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+  .ex .parts{
+    margin-top:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .ex .parts span{
+    display:inline-block;
+    padding:1px 6px;
+    border-radius:3px;
+    margin-right:4px;
+  }
+  .mk-s{background:var(--blue-pale); color:var(--ink-blue);}
+  .mk-v{background:var(--clay-pale); color:var(--clay);}
+  .mk-rel{background:var(--gold-pale); color:var(--gold);}
+  .mk-ant{background:var(--pine-pale); color:var(--pine-deep);}
+
+  .hl-rel{color:var(--gold); font-weight:700;}
+  .hl-ant{color:var(--pine-deep); font-weight:700; border-bottom:2px solid var(--pine-pale);}
+  .hl-bad{color:var(--clay); text-decoration:line-through; text-decoration-color:var(--clay);}
+  .hl-good{color:var(--pine-deep); font-weight:700;}
+
+  /* ---------- two-column compare ---------- */
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin:22px 0;
+  }
+  @media (max-width:700px){.compare{grid-template-columns:1fr;}}
+  .compare .col{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .compare .col.which-side{border-top:4px solid var(--ink-blue);}
+  .compare .col.where-side{border-top:4px solid var(--pine);}
+  .compare .col h4{
+    margin:0 0 12px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:.03em;
+  }
+  .which-side h4{color:var(--ink-blue);}
+  .where-side h4{color:var(--pine);}
+  .compare .col .sentence{
+    font-family:'Source Serif 4', serif;
+    font-size:15.5px;
+    margin-bottom:8px;
+  }
+  .compare .col .note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- rule box ---------- */
+  .rule-box{
+    background:var(--pine-pale);
+    border-left:4px solid var(--pine);
+    padding:18px 22px;
+    border-radius:0 var(--radius) var(--radius) 0;
+    margin:24px 0;
+    font-size:14.5px;
+  }
+  .rule-box .rb-title{
+    font-family:'Shippori Mincho',serif;
+    font-weight:700;
+    color:var(--pine-deep);
+    margin-bottom:8px;
+    font-size:15.5px;
+  }
+
+  /* ---------- pitfall cards (accordion) ---------- */
+  .pitfall{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  .pitfall summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-family:'Shippori Mincho',serif;
+    font-weight:600;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .pitfall summary::-webkit-details-marker{display:none;}
+  .pitfall summary .pf-num{
+    font-family:'JetBrains Mono',monospace;
+    color:#fff;
+    background:var(--clay);
+    font-size:12px;
+    width:24px;height:24px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .pitfall summary .chev{
+    margin-left:auto;
+    color:var(--ink-soft);
+    font-size:13px;
+    transition:transform .2s ease;
+  }
+  .pitfall[open] summary .chev{transform:rotate(180deg);}
+  .pitfall .pf-body{
+    padding:0 22px 22px 60px;
+    font-size:14.5px;
+  }
+  .pitfall .pf-body .ex{margin:10px 0;}
+
+  /* ---------- table ---------- */
+  table.ref{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:var(--card);
+    border:1px solid var(--line);
+  }
+  table.ref th, table.ref td{
+    padding:12px 16px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+  }
+  table.ref th{
+    background:var(--pine-pale);
+    color:var(--pine-deep);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    font-weight:700;
+  }
+  table.ref td.formula{font-family:'Source Serif 4',serif; font-size:14.5px;}
+  table.ref tr:last-child td{border-bottom:none;}
+
+  /* ---------- quiz ---------- */
+  .quiz-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 26px;
+    margin-bottom:18px;
+  }
+  .quiz-q-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .quiz-prompt{
+    font-family:'Source Serif 4',serif;
+    font-size:16.5px;
+    margin-bottom:6px;
+  }
+  .quiz-jp{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .quiz-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-bottom:4px;
+  }
+  .quiz-options button{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13.5px;
+    padding:9px 16px;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:20px;
+    cursor:pointer;
+    color:var(--ink);
+    transition:all .15s ease;
+  }
+  .quiz-options button:hover{border-color:var(--pine); background:var(--pine-pale);}
+  .quiz-options button.correct{
+    background:var(--pine); border-color:var(--pine); color:#fff;
+  }
+  .quiz-options button.incorrect{
+    background:var(--clay); border-color:var(--clay); color:#fff;
+  }
+  .quiz-options button:disabled{cursor:default;}
+  .quiz-feedback{
+    margin-top:14px;
+    padding:14px 16px;
+    border-radius:var(--radius);
+    font-size:13.5px;
+    display:none;
+    background:var(--paper-2);
+    border-left:3px solid var(--line);
+  }
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.ok{border-left-color:var(--pine); }
+  .quiz-feedback.ng{border-left-color:var(--clay);}
+  .quiz-feedback b{font-family:'Shippori Mincho',serif;}
+
+  .quiz-summary{
+    text-align:center;
+    padding:34px;
+    background:var(--pine-pale);
+    border-radius:var(--radius);
+    display:none;
+  }
+  .quiz-summary.show{display:block;}
+  .quiz-summary .score-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:44px;
+    color:var(--pine-deep);
+    font-weight:700;
+  }
+  .reset-btn{
+    margin-top:14px;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:13px;
+    padding:9px 20px;
+    background:var(--pine-deep);
+    color:#fff;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+  }
+
+  /* ---------- listening ---------- */
+  .play-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+  .play-btn{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:13px; padding:9px 18px;
+    background:var(--pine-deep); color:#fff;
+    border:none; border-radius:20px; cursor:pointer;
+  }
+  .play-btn:hover{background:var(--pine);}
+  .play-btn.slow{background:#fff; color:var(--pine-deep); border:1px solid var(--pine);}
+  .script-btn{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:12.5px; padding:8px 14px;
+    background:transparent; color:var(--ink-soft);
+    border:1px dashed var(--line); border-radius:20px; cursor:pointer;
+  }
+  .script-box{
+    display:none; margin-top:12px; padding:14px 16px;
+    background:var(--paper-2); border-radius:var(--radius);
+    font-family:'Source Serif 4',serif; font-size:15px;
+  }
+  .script-box.show{display:block;}
+  .script-box .jp{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:12.5px; color:var(--ink-soft); margin-top:6px;
+  }
+  .audio-note{
+    font-size:12.5px; color:var(--ink-soft);
+    background:var(--gold-pale); border-left:3px solid var(--gold);
+    padding:12px 16px; border-radius:var(--radius); margin-bottom:22px;
+  }
+  .voice-row{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:12px;
+  }
+  .voice-row label{font-size:12.5px; color:var(--ink-soft);}
+  .voice-row select{
+    font-family:'Zen Kaku Gothic New',sans-serif; font-size:12.5px;
+    padding:7px 10px; border:1px solid var(--line); border-radius:var(--radius);
+    background:#fff; color:var(--ink); max-width:280px;
+  }
+  .lv-badge{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px;
+    padding:2px 8px; border-radius:20px; margin-left:8px;
+    vertical-align:middle;
+  }
+  .lv1{background:var(--pine-pale); color:var(--pine-deep);}
+  .lv2{background:var(--gold-pale); color:var(--gold);}
+  .lv3{background:var(--clay-pale); color:var(--clay);}
+
+  /* ---------- writing ---------- */
+  .write-card textarea{
+    width:100%; min-height:72px;
+    font-family:'Source Serif 4',serif; font-size:15.5px;
+    padding:12px 14px; border:1px solid var(--line);
+    border-radius:var(--radius); background:#fff; color:var(--ink);
+    resize:vertical; line-height:1.7;
+  }
+  .write-card textarea:focus{outline:none; border-color:var(--pine);}
+  .hint-line{font-size:12.5px; color:var(--ink-soft); margin-bottom:10px;}
+  .hint-line .tag{
+    background:var(--pine-pale); color:var(--pine-deep);
+    padding:2px 7px; border-radius:3px; margin-right:5px;
+  }
+  .model-box{
+    display:none; margin-top:14px; padding:16px 18px;
+    background:var(--pine-pale); border-radius:var(--radius);
+  }
+  .model-box.show{display:block;}
+  .model-box .model-en{
+    font-family:'Source Serif 4',serif; font-size:16px;
+    color:var(--pine-deep); font-weight:700; margin-bottom:8px;
+  }
+  .model-box .model-alt{
+    font-family:'Source Serif 4',serif; font-size:14px;
+    color:var(--ink-soft); margin-bottom:10px;
+  }
+  .model-box .model-note{font-size:13.5px;}
+
+  footer{
+    padding:30px 56px;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);
+    font-size:12px;
+  }
+  @media (max-width:880px){footer{padding:24px 22px;}}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="side">
+    <div class="side-brand">関係副詞マスター<small>where / when / why / how と which</small></div>
+    <ul class="side-list">
+      <li><a href="#sec-basic"><span class="num">01</span>自動詞・他動詞と関係副詞</a></li>
+      <li><a href="#sec-core"><span class="num">02</span>where と which の見分け方</a></li>
+      <li><a href="#sec-pitfalls"><span class="num">03</span>つまずきポイント5選</a></li>
+      <li><a href="#sec-quiz"><span class="num">04</span>確認問題</a></li>
+      <li><a href="#sec-listening"><span class="num">05</span>リスニング問題</a></li>
+      <li><a href="#sec-writing"><span class="num">06</span>英作文問題</a></li>
+    </ul>
+    <div class="side-score">
+      現在のスコア<br><b id="scoreDisplay">0 / 10</b>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <p class="hero-eyebrow">LESSON 100–103 完全整理</p>
+      <h1 class="jp-serif">関係副詞 where・when・why・how と<br>関係代名詞 which の使い分け</h1>
+      <p>参考書レッスン100〜103の内容をもとに、高校生がいちばんつまずく「where か which か」の判断基準と、5つの頻出ミスを整理しました。最後に確認問題で定着させましょう。</p>
+    </header>
+
+    <!-- ============ 01 基本 ============ -->
+    <section id="sec-basic">
+      <h2>関係副詞の正体 <span class="lesson-tag">Lesson 100</span></h2>
+      <p class="section-lead">関係副詞は、正体をたどると「前置詞 + which」です。which だけでは名詞のかたまりにしかなりませんが、前置詞がつくことで「場所で・時に・理由で」という副詞のかたまりになります。</p>
+
+      <table class="ref">
+        <tr><th>関係副詞</th><th>正体</th><th>先行詞の種類</th><th class="formula">書き換え例</th></tr>
+        <tr><td class="tag">where</td><td class="tag">in / at / on which</td><td>場所</td><td class="formula">the room <b>where</b> he works = the room <b>in which</b> he works</td></tr>
+        <tr><td class="tag">when</td><td class="tag">in / on / at which</td><td>時</td><td class="formula">the day <b>when</b> I saw it = the day <b>on which</b> I saw it</td></tr>
+        <tr><td class="tag">why</td><td class="tag">for which</td><td>理由（reason）</td><td class="formula">the reason <b>why</b> he was late = the reason <b>for which</b> he was late</td></tr>
+        <tr><td class="tag">how</td><td class="tag">in which</td><td>方法（the way）</td><td class="formula"><b>how</b> he solved it = the way <b>in which</b> he solved it</td></tr>
+      </table>
+
+      <div class="rule-box">
+        <div class="rb-title">おさえておきたい前提</div>
+        関係副詞のうしろは「主語も目的語もそろった完全な文」になります。これは、後ろに「不完全な文（何かが1つ欠けた文）」が続く関係代名詞 which・who・that と正反対の性質です。この違いが、次の章で扱う「where か which か」の判定基準そのものになります。
+      </div>
+
+      <div class="rule-box" style="background:var(--blue-pale); border-left-color:var(--ink-blue);">
+        <div class="rb-title" style="color:var(--ink-blue);">先に確認しておきたい：そもそも他動詞・自動詞って何？</div>
+        <p style="margin-top:0;">動詞は大きく2種類に分かれます。</p>
+        <ul style="margin:10px 0 8px; padding-left:20px;">
+          <li><strong>他動詞（transitive verb）</strong>：「〜を」にあたる目的語（O）を、前置詞なしでそのまま動詞の直後に置く動詞。目的語がないと文の意味が完成しない。</li>
+          <li><strong>自動詞（intransitive verb）</strong>：それだけで文が成立する動詞。「〜に・〜で・〜へ」のような意味を付け加えたいときは、必ず<strong>前置詞</strong>を挟む必要がある。</li>
+        </ul>
+
+        <p><strong>見分け方（かんたんテスト）</strong>：動詞の直後に前置詞なしで名詞を置いて意味が通るかどうかを確かめます。</p>
+        <div class="ex" style="background:#fff; margin:10px 0;">
+          <div class="en">He <span class="hl-good">built</span> <span class="hl-rel">the house</span>.（○ built のすぐ後ろに名詞が来る）</div>
+          <div class="jp">→ built は他動詞。the house が目的語。</div>
+        </div>
+        <div class="ex" style="background:#fff; margin:10px 0;">
+          <div class="en">He <span class="hl-good">lives</span> <span class="hl-bad">the house</span>.（✕ 前置詞なしでは置けない）→ He lives <span class="hl-good">in</span> the house.（○）</div>
+          <div class="jp">→ lives は自動詞。the house を続けるには in が必要。</div>
+        </div>
+
+        <p><strong>代表的な動詞</strong></p>
+        <table class="ref" style="margin-bottom:10px;">
+          <tr><th>他動詞（すぐ後ろに O）</th><th>よく使う前置詞とセットの自動詞</th></tr>
+          <tr><td class="formula">build ～ / buy ～ / visit ～ / see ～ / make ～ / like ～ / want ～ / meet ～ / watch ～ / take ～</td><td class="formula">live in ～ / work at [for] ～ / arrive at [in] ～ / listen to ～ / wait for ～ / agree with ～ / talk to [about] ～ / go to ～</td></tr>
+        </table>
+
+        <div class="ex" style="background:var(--clay-pale);">
+          <div class="jp"><b>注意：同じ形で自動詞にも他動詞にもなる動詞がある</b></div>
+          <div class="jp" style="margin-top:6px;">例）run：<span class="en">He runs every morning.</span>（自動詞＝走る）／<span class="en">He runs a company.</span>（他動詞＝〜を経営する）<br>例）stop：<span class="en">The car stopped.</span>（自動詞）／<span class="en">He stopped the car.</span>（他動詞）<br>このタイプは文ごとに「後ろに前置詞なしの目的語があるか」を必ず確認しましょう。</div>
+        </div>
+      </div>
+
+      <div class="rule-box" style="background:var(--blue-pale); border-left-color:var(--ink-blue);">
+        <div class="rb-title" style="color:var(--ink-blue);">他動詞・自動詞と「完全文・不完全文」のつながり</div>
+        「完全文・不完全文」を正しく見抜くカギは、動詞が他動詞か自動詞かを判別できることです。
+        先行詞が<strong>他動詞の目的語</strong>としてうしろの文に入る場合 → 目的語がすっぽり抜けた<strong>不完全文</strong> → which。<br>
+        先行詞が<strong>自動詞＋前置詞</strong>のかたまりで「場所・時・理由」を表す場合 → 動詞だけですでに成立している<strong>完全文</strong> → where / when / why。
+      </div>
+    </section>
+
+    <!-- ============ 02 コア：where vs which ============ -->
+    <section id="sec-core">
+      <h2>where と which の見分け方 <span class="lesson-tag">最重要</span></h2>
+      <p class="section-lead">「先行詞が場所を表す名詞だから where」と反射的に決めてしまうのが、いちばんよくある誤りです。判断すべきは先行詞の意味ではなく、<strong>関係詞のうしろの文が完全文か・不完全文か</strong>です。</p>
+
+      <div class="rule-box">
+        <div class="rb-title">判定ルール（この手順で必ず判断する）</div>
+        ① 関係詞を消して、先行詞をもとの位置に戻し、1つの文にしてみる。<br>
+        ② その文で、先行詞が動詞の「目的語」や「主語」になっていれば → 文が不完全 → <b>which（関係代名詞）</b><br>
+        ③ その文で、先行詞が「そこで／そのとき／それが理由で」のように前置詞句として文の外側から意味を添えているだけなら → 文が完全 → <b>where / when / why（関係副詞）</b>
+      </div>
+
+      <div class="rule-box" style="background:var(--gold-pale); border-left-color:var(--gold);">
+        <div class="rb-title" style="color:var(--gold);">実戦テクニック：先行詞を it に置き換えてみる</div>
+        頭の中で完全文・不完全文を判断しにくいときは、関係詞が指している場所に、先行詞の代わりに <b class="tag">it</b> を置いてみましょう。
+        <ul style="margin:10px 0 8px; padding-left:20px;">
+          <li><b class="tag">it</b> がそのまま動詞の直後に置けて、目的語として文が成立する（＝他動詞＋it）→ その位置に目的語が欠けていた＝<strong>不完全文</strong> → <b>which</b></li>
+          <li><b class="tag">it</b> の前に前置詞が必要になる、または <b class="tag">there</b>（そこで）に置き換わる（＝自動詞＋前置詞＋it）→ すでに文は完成していた＝<strong>完全文</strong> → <b>where / when / why</b></li>
+        </ul>
+      </div>
+
+      <div class="compare">
+        <div class="col which-side">
+          <h4>which（関係代名詞）</h4>
+          <div class="sentence en">This is the house <span class="hl-rel">which</span> he built.</div>
+          <div class="note">戻すと → He built <b>the house</b>.（built は他動詞。the house は built の目的語＝文に不可欠）<br>→ 目的語が欠けた不完全文なので which。<br><b>it テスト</b>：He built <b class="tag">it</b>.（it がそのまま目的語になる＝欠けていたのは目的語）→ which</div>
+        </div>
+        <div class="col where-side">
+          <h4>where（関係副詞）</h4>
+          <div class="sentence en">This is the house <span class="hl-rel">where</span> he lives.</div>
+          <div class="note">戻すと → He lives <b>in the house</b>.（lives は自動詞。the house はあくまで「場所」を添える副詞句）<br>→ すでに完全文なので where。<br><b>it テスト</b>：He lives <b class="tag">in it</b>. ／ He lives <b class="tag">there</b>.（it の前に前置詞が要る＝もともと完全文だった）→ where</div>
+        </div>
+      </div>
+
+      <div class="ex">
+        <div class="en">This is <span class="hl-ant">the room</span> <span class="hl-rel">where</span> my father works.</div>
+        <div class="jp">＝ここが私の父が働いている部屋です。（father works <b>in the room</b> → 完全文 → where）</div>
+        <div class="parts"><span class="mk-ant">the room＝先行詞（場所）</span><span class="mk-rel">where＝in which</span><span class="mk-s">my father＝S</span><span class="mk-v">works＝V（自動詞）</span></div>
+        <div class="jp" style="margin-top:8px;"><b>it テスト</b>：My father works <span class="tag">in it</span>.（work は自動詞なので it の前に in が必要）→ where</div>
+      </div>
+
+      <div class="ex" style="margin-top:14px;">
+        <div class="en">There is <span class="hl-ant">no reason</span> <span class="hl-rel">why</span> I must obey him.</div>
+        <div class="jp">＝私が彼に従わねばならない理由はない。（I must obey him <b>for the reason</b> → 完全文 → why）</div>
+        <div class="parts"><span class="mk-ant">no reason＝先行詞</span><span class="mk-rel">why＝for which</span><span class="mk-s">I＝S</span><span class="mk-v">must obey＝V</span><span class="mk-rel">him＝O</span></div>
+        <div class="jp" style="margin-top:8px;"><b>it テスト</b>：I must obey him <span class="tag">for it</span>.（reason には for が必要。him という目的語はすでに埋まっている）→ why</div>
+      </div>
+
+      <div class="rule-box" style="background:var(--clay-pale); border-left-color:var(--clay);">
+        <div class="rb-title" style="color:var(--clay);">ひっかけ注意：場所の名詞でも which になる例</div>
+        <div class="ex" style="background:#fff;">
+          <div class="en">This is <span class="hl-ant">the city</span> <span class="hl-rel">which</span> I visited last year.</div>
+          <div class="jp">＝ここが私が去年訪れた都市です。（I visited <b>the city</b> → the city は visited の目的語＝不完全文 → which）</div>
+          <div class="jp" style="margin-top:8px;"><b>it テスト</b>：I visited <span class="tag">it</span> last year.（visit は他動詞なので it がそのまま目的語になる）→ which</div>
+        </div>
+        the city も「場所」の名詞ですが、visited という他動詞の目的語になっているため which が正解です。先行詞の意味ではなく、うしろの文の完全・不完全で判断する癖をつけましょう。
+      </div>
+    </section>
+
+    <!-- ============ 03 つまずきポイント ============ -->
+    <section id="sec-pitfalls">
+      <h2>つまずきポイント5選 <span class="lesson-tag">Lesson 101–103</span></h2>
+      <p class="section-lead">参考書のレッスン101〜103に出てくる、テストで狙われやすい5つの落とし穴です。タップして詳しく確認しましょう。</p>
+
+      <details class="pitfall" open>
+        <summary><span class="pf-num">1</span>how と the way はどちらか一方しか使えない<span class="chev">▼</span></summary>
+        <div class="pf-body">
+          <p>how は先行詞を取らない関係副詞です。「the way」と「how」を同時に使うのは誤りで、必ずどちらか片方だけを使います。</p>
+          <div class="ex">
+            <div class="en"><span class="hl-bad">This is the way how he became President.</span></div>
+            <div class="jp">✕ the way と how を同時に使うことはできない。</div>
+          </div>
+          <div class="ex" style="margin-top:10px;">
+            <div class="en"><span class="hl-good">This is how he became President.</span> ／ <span class="hl-good">This is the way he became President.</span> ／ <span class="hl-good">This is the way in which he became President.</span></div>
+            <div class="jp">○ how 単独 ／ the way 単独 ／ the way in which（in which を用いる場合は the way を残せる）</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pitfall">
+        <summary><span class="pf-num">2</span>that は when・where・why の代わりになれるが、万能ではない<span class="chev">▼</span></summary>
+        <div class="pf-body">
+          <p>先行詞が the day（時）、the place（場所）、the reason（理由）のような一般的・抽象的な語のとき、when・where・why の代わりに that を使えます。</p>
+          <div class="ex">
+            <div class="en">Is that <span class="hl-rel">why</span> you look so happy? ＝ Is that <span class="hl-good">that</span> you look so happy?</div>
+            <div class="jp">＝それが理由であなたはそんなに嬉しそうなのですか。</div>
+          </div>
+          <p style="margin-top:14px;">ただし2つの制限があります。</p>
+          <div class="ex" style="background:var(--clay-pale);">
+            <div class="jp"><b>制限①</b> 前置詞とセットになった形（for which, in which など）は that に置き換えられない。前置詞のすぐ後ろに that を置くことはできない。</div>
+            <div class="jp" style="margin-top:6px;"><b>制限②</b> コンマを使う非制限用法では that は使えない（次のポイントで詳しく解説）。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pitfall">
+        <summary><span class="pf-num">3</span>「前置詞＋which＋名詞」というかたまりで先行詞を受ける形がある<span class="chev">▼</span></summary>
+        <div class="pf-body">
+          <p>which 単独ではなく、「前置詞 + which + 名詞」がセットになって、前の文（または語句）全体を先行詞として受けることがあります。in that case（その場合には）のような表現が、そのまま「in which case」の形で関係詞節を作るイメージです。</p>
+          <div class="ex">
+            <div class="en">There may be some words you cannot understand, <span class="hl-rel">in which case</span> you can consult a dictionary.</div>
+            <div class="jp">＝理解できない単語があるかもしれないが、その場合は辞書を引けばよい。</div>
+            <div class="parts"><span class="mk-rel">in which case＝in that case（その場合には）</span></div>
+          </div>
+          <div class="ex" style="margin-top:10px;">
+            <div class="en">She failed the audition for the third time, <span class="hl-rel">at which point</span> she gave up becoming an actress.</div>
+            <div class="jp">＝彼女は3度目のオーディションに落ち、その時点で女優になることをあきらめた。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pitfall">
+        <summary><span class="pf-num">4</span>非制限用法（コンマ付き）で使えるのは where・when・which、that は不可<span class="chev">▼</span></summary>
+        <div class="pf-body">
+          <p>関係副詞・関係代名詞には、先行詞を限定する制限用法（コンマなし）と、情報を補足するだけの非制限用法（コンマあり、「そして～」と訳す）があります。where と when は非制限用法で使えますが、that は非制限用法では使えません。</p>
+          <div class="ex">
+            <div class="en">Boston, <span class="hl-rel">where</span> I live, is very cold in winter.</div>
+            <div class="jp">＝ボストンは、（そこに私は住んでいるのだが）冬はとても寒い。</div>
+          </div>
+          <div class="ex" style="margin-top:10px;">
+            <div class="en">We arrived at the hilltop at noon, <span class="hl-rel">when</span> it began to rain.</div>
+            <div class="jp">＝私たちは正午に丘の上に着いたが、その時（＝そしてそのとき）雨が降り出した。</div>
+            <div class="jp">この when は「and then（そしてその時）」に近い、時間の流れをつなぐ非制限用法です。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="pitfall">
+        <summary><span class="pf-num">5</span>That's why ～. と That's because ～. の向きに注意<span class="chev">▼</span></summary>
+        <div class="pf-body">
+          <p>どちらも「原因」と「結果」をつなぐ表現ですが、前後の関係が逆になります。</p>
+          <table class="ref" style="margin-top:10px;">
+            <tr><th>表現</th><th>直前の文</th><th class="formula">意味の流れ</th></tr>
+            <tr><td class="tag">That's why ～</td><td>原因</td><td class="formula">（原因）→ That's why（それが理由で）→ ～（結果）</td></tr>
+            <tr><td class="tag">That's because ～</td><td>結果</td><td class="formula">（結果）→ That's because（それは～だからだ）→ ～（原因）</td></tr>
+          </table>
+          <div class="ex" style="margin-top:12px;">
+            <div class="en">Jim got up late. <span class="hl-rel">That's why</span> he was late for school.</div>
+            <div class="jp">＝ジムは朝寝坊した。だから学校に遅刻した。（寝坊＝原因 → 遅刻＝結果）</div>
+          </div>
+          <div class="ex" style="margin-top:10px;">
+            <div class="en">Jim was late for school. <span class="hl-rel">That's because</span> he got up late.</div>
+            <div class="jp">＝ジムは学校に遅刻した。それは寝坊したからだ。（遅刻＝結果 → 寝坊＝原因）</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ 04 quiz ============ -->
+    <section id="sec-quiz">
+      <h2>確認問題 <span class="lesson-tag">全10問</span></h2>
+      <p class="section-lead">選択肢をクリックすると、その場で正解と解説が表示されます。まずは自分の力で考えてから答えましょう。</p>
+
+      <div id="quizArea"></div>
+      <div class="quiz-summary" id="quizSummary">
+        <div style="font-family:'Shippori Mincho',serif; color:var(--pine-deep); font-size:15px; margin-bottom:6px;">お疲れさまでした</div>
+        <div class="score-num"><span id="finalScore">0</span> / 10</div>
+        <button class="reset-btn" onclick="resetQuiz()">もう一度解く</button>
+      </div>
+    </section>
+
+    <!-- ============ 05 listening ============ -->
+    <section id="sec-listening">
+      <h2>リスニング問題 <span class="lesson-tag">全8問</span></h2>
+      <p class="section-lead">音声を聞いて、聞こえた関係詞を選びましょう。関係副詞は弱く速く発音されるため、うしろの文が完全か不完全かを耳で判断する練習になります。Level 1（短い2択）→ Level 2（3択・ひっかけ入り）→ Level 3（長文・非制限用法）と少しずつ難しくなります。</p>
+
+      <div class="audio-note">
+        音声はブラウザの読み上げ機能を使用します。声が聞き取りにくい・不自然に感じる場合は、下のメニューから別の声を選んでください。音が出ない場合は「スクリプトを表示」を押して、先生が読み上げてください。
+        <div class="voice-row">
+          <label for="voiceSelect">読み上げの声</label>
+          <select id="voiceSelect"><option>読み込み中…</option></select>
+          <button class="script-btn" onclick="speak('This is the room where my father works.', 0.85)">声を試す</button>
+        </div>
+      </div>
+
+      <div id="listenArea"></div>
+    </section>
+
+    <!-- ============ 06 writing ============ -->
+    <section id="sec-writing">
+      <h2>英作文問題 <span class="lesson-tag">全8問</span></h2>
+      <p class="section-lead">日本語を英語に直しましょう。書いてから「解答例を見る」を押して、自分の答えと比べてください。動詞が自動詞か他動詞かを意識するのがポイントです。Level 1（短い基本文）→ Level 2（先行詞の判断が必要）→ Level 3（非制限用法・複数の関係詞）と段階的に上がります。</p>
+
+      <div id="writeArea"></div>
+    </section>
+  </main>
+</div>
+
+<footer>関係副詞（where / when / why / how）と関係代名詞 which の使い分け ― Lesson 100〜103 の内容整理</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    prompt: 'This is the house __ he built with his own hands.',
+    jp: '＝これは彼が自分の手で建てた家です。',
+    options: ['which', 'where', 'why'],
+    answer: 'which',
+    explain: '正解は which。戻すと「He built the house」となり、the house は built の目的語＝文が不完全なので関係代名詞 which を使います。'
+  },
+  {
+    prompt: 'This is the house __ he has lived for ten years.',
+    jp: '＝これは彼が10年間住んでいる家です。',
+    options: ['which', 'where', 'why'],
+    answer: 'where',
+    explain: '正解は where。戻すと「He has lived in the house」となり lived は自動詞、the house は場所を表す副詞句なので、文はすでに完全＝関係副詞 where を使います。'
+  },
+  {
+    prompt: 'Tokyo is the city __ I was born.',
+    jp: '＝東京は私が生まれた都市です。',
+    options: ['which', 'where', 'that I visited'],
+    answer: 'where',
+    explain: '正解は where。「I was born in the city」で born は自動詞、the city は場所を表す副詞句なので文は完全＝where です。'
+  },
+  {
+    prompt: 'Tokyo is the city __ I visited last summer.',
+    jp: '＝東京は私が去年の夏に訪れた都市です。',
+    options: ['which', 'where', 'why'],
+    answer: 'which',
+    explain: '正解は which。「I visited the city」で the city は visited の目的語＝文が不完全なので which です。先行詞が「場所」でも自動的に where にはなりません。'
+  },
+  {
+    prompt: 'Please tell me the reason __ you were absent yesterday.',
+    jp: '＝あなたが昨日欠席した理由を教えてください。',
+    options: ['which', 'why', 'how'],
+    answer: 'why',
+    explain: '正解は why。「You were absent for the reason」＝for which（理由で）にあたるので、先行詞 the reason には why を使います。'
+  },
+  {
+    prompt: 'Could you tell us __ he became President?（＝the way in which と同じ意味にしたい）',
+    jp: '＝彼がどのようにして大統領になったのか教えてもらえますか。',
+    options: ['the way how', 'how', 'which way'],
+    answer: 'how',
+    explain: '正解は how。the way と how は同時に使えません。「the way」を残したいなら how を消し、how を使うなら the way を消します。'
+  },
+  {
+    prompt: 'There may be some words you cannot understand, __ you can consult a dictionary.',
+    jp: '＝理解できない単語があるかもしれないが、その場合は辞書を引けばよい。',
+    options: ['which case', 'in which case', 'that case'],
+    answer: 'in which case',
+    explain: '正解は in which case。「前置詞＋which＋名詞」がひとかたまりで前の文全体を受け、in that case（その場合は）の意味を表します。'
+  },
+  {
+    prompt: 'Boston __ is very cold in winter.（I live there／非制限用法・コンマ2つを補って考える）',
+    jp: '＝ボストンは（そこに私は住んでいるのだが）冬はとても寒い。',
+    options: [', where I live,', ', that I live,', 'where I live'],
+    answer: ', where I live,',
+    explain: '正解は「, where I live,」。地名など固有名詞を先行詞にして補足説明する非制限用法にはコンマが必要で、この用法に that は使えません。'
+  },
+  {
+    prompt: 'Jim got up late. __ he was late for school.',
+    jp: '＝ジムは寝坊した。だから学校に遅刻した。',
+    options: ["That's why", "That's because"],
+    answer: "That's why",
+    explain: '正解は That\'s why。直前の文（寝坊した）が原因で、そのあとに結果（遅刻した）が続く形なので why を使います。'
+  },
+  {
+    prompt: 'Jim was late for school. __ he got up late.',
+    jp: '＝ジムは学校に遅刻した。それは寝坊したからだ。',
+    options: ["That's why", "That's because"],
+    answer: "That's because",
+    explain: '正解は That\'s because。直前の文（遅刻した）が結果で、そのあとに原因（寝坊した）が続く形なので because を使います。'
+  }
+];
+
+let score = 0;
+let answered = new Array(QUESTIONS.length).fill(false);
+
+function renderQuiz(){
+  const area = document.getElementById('quizArea');
+  area.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="quiz-q-num">Q${i+1}</div>
+      <div class="quiz-prompt en">${q.prompt}</div>
+      <div class="quiz-jp">${q.jp}</div>
+      <div class="quiz-options" id="opts-${i}"></div>
+      <div class="quiz-feedback" id="fb-${i}"></div>
+    `;
+    area.appendChild(card);
+    const optWrap = card.querySelector(`#opts-${i}`);
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.onclick = () => selectAnswer(i, opt, btn, optWrap);
+      optWrap.appendChild(btn);
+    });
+  });
+  updateScoreDisplay();
+}
+
+function selectAnswer(i, chosen, btnEl, optWrap){
+  if(answered[i]) return;
+  answered[i] = true;
+  const q = QUESTIONS[i];
+  const correct = chosen === q.answer;
+  if(correct) score++;
+
+  [...optWrap.children].forEach(b => {
+    b.disabled = true;
+    if(b.textContent === q.answer) b.classList.add('correct');
+    else if(b === btnEl) b.classList.add('incorrect');
+  });
+
+  const fb = document.getElementById(`fb-${i}`);
+  fb.classList.add('show', correct ? 'ok' : 'ng');
+  fb.innerHTML = `<b>${correct ? '正解です。' : '惜しい、正解は「' + q.answer + '」。'}</b><br>${q.explain}`;
+
+  updateScoreDisplay();
+
+  if(answered.every(a => a)){
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('quizSummary').classList.add('show');
+  }
+}
+
+function updateScoreDisplay(){
+  document.getElementById('scoreDisplay').textContent = `${score} / ${QUESTIONS.length}`;
+}
+
+function resetQuiz(){
+  score = 0;
+  answered = new Array(QUESTIONS.length).fill(false);
+  document.getElementById('quizSummary').classList.remove('show');
+  renderQuiz();
+  document.getElementById('sec-quiz').scrollIntoView({behavior:'smooth'});
+}
+
+renderQuiz();
+
+/* ================= LISTENING ================= */
+const LISTENING = [
+  {
+    lv: 1,
+    audio: "This is the room where he sleeps.",
+    jp: "＝ここが彼が眠る部屋です。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['which', 'where'],
+    answer: 'where',
+    explain: 'sleep は自動詞。「その部屋で眠る」は sleep in the room なので、うしろは完全文＝where。'
+  },
+  {
+    lv: 1,
+    audio: "This is the book which I read.",
+    jp: "＝これは私が読んだ本です。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['which', 'where'],
+    answer: 'which',
+    explain: 'read は他動詞で目的語が欠けています（I read it）＝不完全文なので which。'
+  },
+  {
+    lv: 1,
+    audio: "I remember the day when we met.",
+    jp: "＝私たちが会った日を覚えています。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['when', 'where', 'which'],
+    answer: 'when',
+    explain: 'met は「we met」で完成。the day は「その日に」と時を添えるだけ＝when。'
+  },
+  {
+    lv: 2,
+    audio: "Tell me the reason why you changed your mind.",
+    jp: "＝あなたが考えを変えた理由を教えてください。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['why', 'which', 'how'],
+    answer: 'why',
+    explain: 'changed の目的語 your mind はすでにあり、the reason は for which（その理由で）＝why。'
+  },
+  {
+    lv: 2,
+    audio: "This is the restaurant which we visited last night.",
+    jp: "＝ここが昨夜私たちが訪れたレストランです。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['which', 'where', 'why'],
+    answer: 'which',
+    explain: 'visited は他動詞で目的語が欠けています（we visited it）＝不完全文なので which。先行詞が場所でも which になる典型例です。'
+  },
+  {
+    lv: 2,
+    audio: "That's how she learned to speak English so well.",
+    jp: "＝そのようにして彼女はあんなに上手に英語を話せるようになった。",
+    q: "空所に入るのはどれ？",
+    options: ['the way how', 'how', 'which'],
+    answer: 'how',
+    explain: '方法を表す関係副詞 how は先行詞を取りません。the way how という重複した形は使えません。'
+  },
+  {
+    lv: 3,
+    audio: "Kyoto, where I studied for four years, is famous for its old temples.",
+    jp: "＝京都は、私が4年間学んだ場所ですが、古い寺で有名です。",
+    q: "聞こえた関係詞はどれ？（コンマに注意）",
+    options: ['that', 'where', 'which'],
+    answer: 'where',
+    explain: 'コンマで挟んだ非制限用法。「そこで学んだ」と場所を添えるだけ＝where。非制限用法に that は使えません。'
+  },
+  {
+    lv: 3,
+    audio: "He missed the last train, which made him late for the meeting the next morning.",
+    jp: "＝彼は終電に乗り遅れ、そのせいで翌朝の会議に遅刻した。",
+    q: "聞こえた関係詞はどれ？",
+    options: ['where', 'which', 'why'],
+    answer: 'which',
+    explain: 'この which は前の文全体を受け、made の主語になっています。主語が欠けた不完全文なので関係代名詞 which。'
+  }
+];
+
+let lAnswered = new Array(LISTENING.length).fill(false);
+
+function speak(text, rate){
+  if(!('speechSynthesis' in window)){
+    alert('お使いのブラウザは音声読み上げに対応していません。「スクリプトを表示」をご利用ください。');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US';
+  u.rate = rate;
+  u.pitch = 1.05;
+  u.volume = 1;
+  const v = getChosenVoice();
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+
+/* --- 自然に聞こえる英語音声を優先して選ぶ --- */
+let VOICES = [];
+let chosenVoiceURI = null;
+
+const PREFERRED = [
+  'Google US English', 'Google UK English Female',
+  'Samantha', 'Ava', 'Allison', 'Susan', 'Karen', 'Moira', 'Serena',
+  'Microsoft Aria', 'Microsoft Jenny', 'Microsoft Michelle', 'Microsoft Sonia',
+  'Microsoft Zira'
+];
+/* 機械的で不自然に聞こえがちな音声は候補から外す */
+const AVOID = /albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|hysterical|pipe organ|eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|junior|ralph|fred|daniel \(/i;
+
+function loadVoices(){
+  const all = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+  VOICES = all.filter(v => /^en(-|_|$)/i.test(v.lang) && !AVOID.test(v.name));
+  if(!VOICES.length) VOICES = all.filter(v => /^en(-|_|$)/i.test(v.lang));
+
+  if(!chosenVoiceURI && VOICES.length){
+    let best = null;
+    for(const p of PREFERRED){
+      best = VOICES.find(v => v.name.toLowerCase().includes(p.toLowerCase()));
+      if(best) break;
+    }
+    if(!best) best = VOICES.find(v => /en-US/i.test(v.lang)) || VOICES[0];
+    chosenVoiceURI = best.voiceURI;
+  }
+  populateVoiceSelect();
+}
+
+function getChosenVoice(){
+  return VOICES.find(v => v.voiceURI === chosenVoiceURI) || null;
+}
+
+function populateVoiceSelect(){
+  const sel = document.getElementById('voiceSelect');
+  if(!sel) return;
+  if(!VOICES.length){
+    sel.innerHTML = '<option>利用可能な英語音声がありません</option>';
+    return;
+  }
+  sel.innerHTML = VOICES.map(v =>
+    `<option value="${v.voiceURI}" ${v.voiceURI === chosenVoiceURI ? 'selected' : ''}>${v.name}（${v.lang}）</option>`
+  ).join('');
+  sel.onchange = e => { chosenVoiceURI = e.target.value; };
+}
+
+if('speechSynthesis' in window){
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+function renderListening(){
+  const area = document.getElementById('listenArea');
+  area.innerHTML = '';
+  LISTENING.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="quiz-q-num">Listening ${i+1}<span class="lv-badge lv${item.lv}">Level ${item.lv}</span></div>
+      <div class="play-row">
+        <button class="play-btn" id="lp-${i}">▶ 再生</button>
+        <button class="play-btn slow" id="ls-${i}">ゆっくり再生</button>
+        <button class="script-btn" id="lt-${i}">スクリプトを表示</button>
+      </div>
+      <div class="quiz-jp">${item.q}</div>
+      <div class="quiz-options" id="lopts-${i}"></div>
+      <div class="script-box" id="lscript-${i}">
+        <div>${item.audio}</div>
+        <div class="jp">${item.jp}</div>
+      </div>
+      <div class="quiz-feedback" id="lfb-${i}"></div>
+    `;
+    area.appendChild(card);
+
+    card.querySelector(`#lp-${i}`).onclick = () => speak(item.audio, 0.85);
+    card.querySelector(`#ls-${i}`).onclick = () => speak(item.audio, 0.62);
+    card.querySelector(`#lt-${i}`).onclick = () => {
+      document.getElementById(`lscript-${i}`).classList.toggle('show');
+    };
+
+    const wrap = card.querySelector(`#lopts-${i}`);
+    item.options.forEach(opt => {
+      const b = document.createElement('button');
+      b.textContent = opt;
+      b.onclick = () => {
+        if(lAnswered[i]) return;
+        lAnswered[i] = true;
+        const ok = opt === item.answer;
+        [...wrap.children].forEach(x => {
+          x.disabled = true;
+          if(x.textContent === item.answer) x.classList.add('correct');
+          else if(x === b) x.classList.add('incorrect');
+        });
+        const fb = document.getElementById(`lfb-${i}`);
+        fb.classList.add('show', ok ? 'ok' : 'ng');
+        fb.innerHTML = `<b>${ok ? '正解です。' : '惜しい、正解は「' + item.answer + '」。'}</b><br>${item.explain}`;
+        document.getElementById(`lscript-${i}`).classList.add('show');
+      };
+      wrap.appendChild(b);
+    });
+  });
+}
+renderListening();
+
+/* ================= WRITING ================= */
+const WRITING = [
+  {
+    lv: 1,
+    jp: "これは私が昨日買った本です。",
+    hints: ['the book', 'buy'],
+    model: "This is the book which I bought yesterday.",
+    alt: "= This is the book (that) I bought yesterday.／目的格なので関係詞の省略も可。",
+    note: "buy は他動詞で目的語が欠けています（I bought it）＝不完全文なので which。"
+  },
+  {
+    lv: 1,
+    jp: "ここが私の姉が働いているカフェです。",
+    hints: ['the café', 'work'],
+    model: "This is the café where my sister works.",
+    alt: "= This is the café in which my sister works.",
+    note: "work は自動詞。「そのカフェで働く」は work in the café なので、うしろは完全文＝where を使います。"
+  },
+  {
+    lv: 1,
+    jp: "私は彼に初めて会った日を覚えている。",
+    hints: ['the day', 'meet'],
+    model: "I remember the day when I first met him.",
+    alt: "= I remember the day on which I first met him.",
+    note: "met の目的語 him はすでにあり、the day は「その日に」と時を添えるだけ＝when。"
+  },
+  {
+    lv: 2,
+    jp: "私は父が生まれた町を訪れた。",
+    hints: ['the town', 'be born'],
+    model: "I visited the town where my father was born.",
+    alt: "= I visited the town in which my father was born.",
+    note: "be born は「その町で生まれた」と場所を前置詞で添える形。うしろは完全文なので where。"
+  },
+  {
+    lv: 2,
+    jp: "彼が会議に遅刻した理由を私は知らない。",
+    hints: ['the reason', 'be late for'],
+    model: "I don't know the reason why he was late for the meeting.",
+    alt: "= I don't know why he was late for the meeting.（先行詞 the reason を省略しても可）",
+    note: "the reason を先行詞にする理由の関係副詞は why（= for which）。"
+  },
+  {
+    lv: 2,
+    jp: "これが彼が試験に合格した方法です。",
+    hints: ['pass the exam'],
+    model: "This is how he passed the exam.",
+    alt: "= This is the way he passed the exam.／= This is the way in which he passed the exam.",
+    note: "the way how という重複した形は使えません。how か the way のどちらか一方だけを使います。"
+  },
+  {
+    lv: 3,
+    jp: "大阪は、私が3年間住んでいた都市ですが、食べ物で有名です。",
+    hints: ['Osaka', 'live', 'be famous for'],
+    model: "Osaka, where I lived for three years, is famous for its food.",
+    alt: "= Osaka, in which I lived for three years, is famous for its food.",
+    note: "固有名詞を補足説明する非制限用法。live は自動詞なので where。この用法に that は使えません。"
+  },
+  {
+    lv: 3,
+    jp: "私たちは正午に丘の上に着いたが、その時雨が降り始め、そのせいで予定を変更しなければならなかった。",
+    hints: ['the hilltop', 'start to rain', 'change our plan'],
+    model: "We arrived at the hilltop at noon, when it started to rain, which made us change our plan.",
+    alt: "= We arrived at the hilltop at noon, and then it started to rain, and that made us change our plan.",
+    note: "コンマ＋when は「そしてその時」。続く which は前の文全体を受けて made の主語になる関係代名詞です。2種類の非制限用法を1文で使い分けます。"
+  }
+];
+
+function renderWriting(){
+  const area = document.getElementById('writeArea');
+  area.innerHTML = '';
+  WRITING.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card write-card';
+    card.innerHTML = `
+      <div class="quiz-q-num">Writing ${i+1}<span class="lv-badge lv${item.lv}">Level ${item.lv}</span></div>
+      <div class="quiz-prompt" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:15.5px;">${item.jp}</div>
+      <div class="hint-line">${item.hints.map(h => `<span class="tag">${h}</span>`).join('')}</div>
+      <textarea placeholder="ここに英文を書いてみましょう"></textarea>
+      <div style="margin-top:12px;">
+        <button class="play-btn" id="wb-${i}">解答例を見る</button>
+      </div>
+      <div class="model-box" id="wm-${i}">
+        <div class="model-en">${item.model}</div>
+        <div class="model-alt">${item.alt}</div>
+        <div class="model-note">${item.note}</div>
+      </div>
+    `;
+    area.appendChild(card);
+    card.querySelector(`#wb-${i}`).onclick = () => {
+      document.getElementById(`wm-${i}`).classList.toggle('show');
+    };
+  });
+}
+renderWriting();
+</script>
+</body>
+</html>
